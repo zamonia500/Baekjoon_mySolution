@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/* 8240 KB , 264 MS */
+/* 9360 KB, 148 MS */
 
 public class Num9693 {
 	StringBuilder sb;
@@ -39,24 +39,15 @@ public class Num9693 {
 		 * 2의 배수만 2를 약수로 가지고 있고, 5의 배수만 5 약수로 가지고 있다.
 		 * */
 		int temp;
-		int two = 0;
 		int five = 0;
-		int i = 0;
-		for (i = 2; i <= N; i = i + 2) {	
-			temp = i;
-			while(true) {
-				if(temp % 2 == 0) {	temp /= 2; ++two; }
-				else break;
-			}
-		}
 		
-		for (i = 5; i <= N; i += 5) {	
+		for (int i = 5; i <= N; i += 5) {	
 			temp = i;
 			while(true) {
 				if(temp % 5 == 0) { temp /= 5; ++five; }
 				else break;
 			}
 		}		
-		sb.append("Case #" + case_n + ": " + (two > five ? five : two) + "\n");
+		sb.append("Case #" + case_n + ": " + five + "\n");
 	}	
 }
